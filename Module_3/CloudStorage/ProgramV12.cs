@@ -13,7 +13,7 @@ namespace CloudStorageV12
 {
     class Program
     {
-        private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=psmijnstoor;AccountKey=yFXAfWnAarfaJ0FSrz/kTrCeP5IF7cSdQXhGnO9oBja+gUKQQKkbsREz1+4qnTdTjqF8WymTl7Y/+ASt4p+rMg==;EndpointSuffix=core.windows.net";
+        private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=psmijnstoom;AccountKey=tv4PUdWuWaaFWSQcy5+6pP0B56Fo/tp2Qh+lSdbYsKEqkqn67JnAJOSX7RI+oMxkpYEiGgt7JQH9+ASt+ZY1cw==;EndpointSuffix=core.windows.net";
         private static string basePath = Assembly.GetExecutingAssembly().Location;
 
         static async Task Main(string[] args)
@@ -22,10 +22,10 @@ namespace CloudStorageV12
             //WriteSimple();
             //ReadSimple();
             //WriteBlockBlob();
-            //WritePageBlob();
-            ReadPageBlob();
+           // WritePageBlob();
+            //ReadPageBlob();
             //await LeaseAsync();
-            // await MiscAsync();
+            await MiscAsync();
             //await ArchiveAsync();
 
             Console.WriteLine("Press Enter to quit");
@@ -36,7 +36,8 @@ namespace CloudStorageV12
 
         private static BlobServiceClient CreateAccount(BlobClientOptions options = null)
         {
-           // if (options == null) options = (BlobClientOptions)BlobClientOptions.Default;
+           //if (options == null) options = (BlobClientOptions)BlobClientOptions.Default;
+           
 
             BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString, options);
             return blobServiceClient;

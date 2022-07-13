@@ -18,9 +18,9 @@ public static class EntityFunctions
           [DurableClient] IDurableOrchestrationClient starter,
           ILogger log)
     {
-        string instanceId = await starter.StartNewAsync("EntityFunctions_Class_Based", null);
-        log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
-        instanceId = await starter.StartNewAsync("EntityFunctions_Counter", null);
+        //string instanceId = await starter.StartNewAsync("EntityFunctions_Class_Based", null);
+        //log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
+        string instanceId = await starter.StartNewAsync("EntityFunctions_Counter", null);
         log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
         return starter.CreateCheckStatusResponse(req, instanceId);
@@ -52,7 +52,7 @@ public static class EntityFunctions
         // Signal is fire and forget (one-way)
         // You won't get a response
         await svc.SignalEntityAsync<ICounterService>(entityId, svc => svc.Increment());
-
+        await  Task.Delay(1000);
         var response = await svc.ReadEntityStateAsync<JObject>(entityId);
         log.LogInformation($"Counter response: { response.EntityState}");
         return $"End Signalling";
