@@ -40,13 +40,15 @@ namespace CosmosDemo
         public static async Task RunCoreSql()
         {
             var client = CreateCoreSqlClient();
-            await AddProductGroups(client);
-            //await ReadData(client);
+            //await AddProductGroups(client);
+            await ReadData(client);
             Console.WriteLine("Done");
 
         }
         private static CosmosClient CreateCoreSqlClient()
         {
+            //CosmosClientOptions opts = new CosmosClientOptions();
+           //opts.ApplicationRegion
             return new CosmosClient(Host, PrimaryKey);
         }
         
@@ -61,6 +63,7 @@ namespace CosmosDemo
             while(iterator.HasMoreResults)
             {
                 FeedResponse<Product> fResponse = await iterator.ReadNextAsync();
+                continuationToken = fResponse.ContinuationToken;
                 foreach(var item in fResponse)
                 {
                     Console.WriteLine($"{item.Name}. Nr of products: {item.ProductGroups.Count()}");
@@ -83,7 +86,8 @@ namespace CosmosDemo
             }
             Console.WriteLine("====================================================");
             var linq = pContainer.GetItemLinqQueryable<Product>();
-            var fi = linq.Where(g => g.ID == "1").ToFeedIterator<Product>();
+            //var fi = linq.Where(g => g.ID == "1").ToFeedIterator<Product>();
+            var fi = (from g in linq where g.ID == "1" select g).ToFeedIterator<Product>();
             while (fi.HasMoreResults)
             {
                 var fResponse = await fi.ReadNextAsync();

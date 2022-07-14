@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualNetworks_vnet_name": {
+            "value": "Test3"
+        },
+        "virtualMachines_name": {
+            "value": "ps-patrick"
+        },
+        "networkInterfaces_name": {
+            "value": null
+        },
+        "publicIPAddresses_ip_name": {
+            "value": null
+        },
+        "networkSecurityGroups_nsg_name": {
+            "value": null
+        },
+        "schedules_shutdown_computevm_name": {
+            "value": null
+        },
+        "adminUser":{
+            "value":"patrick"
+        },
+        "adminPassword": {
+            "reference": {
+                "keyVault":{
+                    "id":"/subscriptions/<subscription-id>/resourceGroups/<resgrpname>/providers/Microsoft.KeyVault/vaults/<vault-name>"
+                },
+                "secretName": "<keyName>"       
+                }
+        }
+    }
+}
