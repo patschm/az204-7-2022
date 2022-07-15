@@ -4,12 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.AzureAppServices;
 
-namespace EvtGridEndpoint
+namespace WebSite
 {
     public class Program
     {
@@ -20,17 +18,8 @@ namespace EvtGridEndpoint
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureLogging(builder => {
-                    builder.AddAzureWebAppDiagnostics();
-                })
-                //.ConfigureServices(services =>
-                //{
-                //    services.Configure<AzureBlobLoggerOptions>(options =>
-                //    {
-                //        options.BlobName = "gridlog.txt";
-                //    });
-                //})
-                .ConfigureWebHostDefaults(webBuilder => {
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
                     webBuilder.UseStartup<Startup>();
                 });
     }

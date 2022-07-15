@@ -6,16 +6,16 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Azure.Messaging.EventGrid" Version="4.10.0" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="6.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
+    <PackageReference Include="Azure.Messaging.EventGrid" Version="4.11.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="6.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="6.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="6.0.7" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="6.0.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.7" />
   </ItemGroup>
 
 

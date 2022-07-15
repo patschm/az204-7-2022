@@ -10,7 +10,7 @@ namespace EvtGridCmds
     {
         static string topicHost = "ps-eventueel.westeurope-1.eventgrid.azure.net";
         static string topicEP = $"https://{topicHost}/api/events";
-        static string topicKey = "bj6PWttT5bvCCgz6vdGIzjrmlzfCyMcUpIgIRK7/qLs=";
+        static string topicKey = "bvK+KJDVrhQ20AoI8VfJTf00lh1Oy1Tgdy8vOMElqk8=";
 
         static async Task Main(string[] args)
         {
