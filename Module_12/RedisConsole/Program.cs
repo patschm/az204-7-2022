@@ -7,7 +7,7 @@ namespace RedisConsole
 {
     class Program
     {
-        private static string conStr = "ps-cash.redis.cache.windows.net:6380,password=6KKJmOkPW0mfOiKibHrE5pbV3F1OuOg8eAzCaGRwCLs=,ssl=True,abortConnect=False";
+        private static string conStr = "ps-radijs.redis.cache.windows.net:6380,password=SXxdBNDCA5945rQndfzH5HpSEcUMajNZGAzCaMdmOBw=,ssl=True,abortConnect=False";
         private static ConnectionMultiplexer connection;
 
         static void Main(string[] args)

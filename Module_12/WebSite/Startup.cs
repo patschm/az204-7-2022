@@ -10,7 +10,7 @@ namespace WebSite
 {
     public class Startup
     {
-        private string connectionString = "ps-kasj.redis.cache.windows.net:6380,password=GTbyTL0HhilRzRNTtkE7M3ydbIxEytOCjAzCaKhNQFE=,ssl=True,abortConnect=False";
+        private string connectionString = "ps-radijs.redis.cache.windows.net:6380,password=SXxdBNDCA5945rQndfzH5HpSEcUMajNZGAzCaMdmOBw=,ssl=True,abortConnect=False";
         private string baseAddress = "https://localhost:5001/";
 
         public Startup(IConfiguration configuration)

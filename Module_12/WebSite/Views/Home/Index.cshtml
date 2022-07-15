@@ -3,7 +3,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<distributed-cache name="index" expires-after="@TimeSpan.FromSeconds(60)">
+<distributed-cache name="index"  expires-after="@TimeSpan.FromSeconds(60)">
     <div class="text-center">
         <h1 class="display-4">Today at @DateTime.Now.ToLongTimeString() we have the next groups</h1>
         <ul>
